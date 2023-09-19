@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'views/view.dart';
 
 void main() {
   runApp( Portfolio());
@@ -9,6 +10,7 @@ class Portfolio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData.from(colorScheme: ColorScheme.light()),
       darkTheme: ThemeData.from(colorScheme: ColorScheme.dark()),
       title: 'Portfoio',
@@ -27,12 +29,18 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int selectedindex = 0;
 
-  
+
   void _onitemtapped(int index){
       setState((){
         selectedindex = index;
       });
    }
+
+   static const List<Widget> Widgets = [
+     profile(),
+     projects(),
+     about()
+   ];
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +49,7 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: selectedindex,
         onTap: _onitemtapped ,
-        items: <BottomNavigationBarItem>[
+        items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home),
           label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.work),
@@ -52,15 +60,9 @@ class _HomePageState extends State<HomePage> {
 
       ),
       body: SafeArea(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Card(
-              color: Colors.lightGreenAccent,
-            )
-          ],
-        ),
+        child: Widgets.elementAt(selectedindex),
       ),
+
     );
   }
 }
