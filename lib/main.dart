@@ -48,6 +48,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: selectedindex,
+        selectedFontSize: 20,
         onTap: _onitemtapped ,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home),
