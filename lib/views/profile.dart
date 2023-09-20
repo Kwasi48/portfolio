@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class profile extends StatelessWidget {
   const profile({super.key});
 
@@ -8,18 +7,36 @@ class profile extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: SafeArea(
-        child: Column(
+        child: Stack(
           children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Stack(
-                  children: [
-                    Text('Hi, I am Micky, a software Engineer Specialising in Flutter',)
-                  ],
-                )
-              ],
-            )
+            Positioned(
+                top: 40,
+                left: 50,
+                child: Text(
+                  'Hi, I am Micky, a software Engineer Specialising in Flutter',
+                  style: TextStyle(fontSize: 30),
+                )),
+            Positioned(
+                top: 90,
+                left: 50,
+                child: SizedBox(
+                  height: 100,
+                  width: 100,
+                  child: Text(
+                    'Lorem',
+                    style: TextStyle(fontSize: 25),
+                  ),
+                )),
+            Positioned(
+                top: 300,
+                left: 50,
+                child: Card(
+                  color: Colors.deepPurpleAccent,
+                  child: Text(
+                    'Lorem',
+                    style: TextStyle(fontSize: 25),
+                  ),
+                ))
           ],
         ),
       ),
