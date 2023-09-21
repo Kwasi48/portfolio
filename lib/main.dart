@@ -13,7 +13,7 @@ class Portfolio extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.from(colorScheme: ColorScheme.light()),
       darkTheme: ThemeData.from(colorScheme: ColorScheme.dark()),
-      title: 'Portfoio',
+      title: 'Portfolio',
       home: HomePage(),
     );
   }
