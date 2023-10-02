@@ -42,7 +42,7 @@ Widget _imageCard() {
         image: AssetImage(
           'assets/mike.png',
         ),
-        height: 300,
+        height: 500,
       ),
       SizedBox(
         width: 18,
