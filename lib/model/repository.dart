@@ -1,8 +1,6 @@
 
-
-
 class repos{
-  late int id;
+  late String id;
   late String ProjectName;
   late String Visibility;
 

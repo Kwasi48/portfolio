@@ -60,19 +60,19 @@ Widget _imageCard() {
 Widget githubButton() {
   return const SocialMediaButton.github(
     url: "https://github.com/Kwasi48",
-    color: Colors.white,
+    color: Colors.purple,
   );
 }
 Widget xButton() {
   return const  SocialMediaButton.twitter(
     url: "https://twitter.com/abubonsrah47",
-    color: Colors.white,
+    color: Colors.purple,
   );
 }
 
 Widget linkedInButton() {
   return const  SocialMediaButton.linkedin(
     url: "https://www.linkedin.com/in/michael-obeng-abu-08483120b?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BUAcdWAogRWKB1cPZxUusVA%3D%3D",
-    color: Colors.white,
+    color: Colors.purple,
   );
 }
