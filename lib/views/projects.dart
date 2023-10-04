@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 
 class projects extends StatelessWidget {
-  const projects({super.key});
+  projects({super.key});
+  final List repos = [];
 
 
   @override
@@ -13,9 +14,11 @@ class projects extends StatelessWidget {
         title: Text('Repositories'),
         centerTitle: true,
       ),
-      // body: SafeArea(
-      //   child: ListView.builder(itemBuilder: itemBuilder),
-      // ),
+      body: SafeArea(
+        child: ListView.builder(itemBuilder: (context, index){
+          return ListTile()
+        }),
+      ),
     );
   }
 }
