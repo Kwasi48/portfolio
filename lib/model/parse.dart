@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:portfolio/model/repository.dart';
 
+// gets the repos.json data from assets folder and convert it to dart object
 class Parser{
 
   Future<List> readJson() async {
