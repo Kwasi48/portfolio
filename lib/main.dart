@@ -33,7 +33,7 @@ class _PortfolioState extends State<Portfolio> {
                   darkMode = !darkMode;
                 });
               },
-              icon: (darkMode ? Icon(Icons.dark_mode) : Icon(Icons.light_mode))),
+              icon: (darkMode ? Icon(Icons.light_mode) : Icon(Icons.dark_mode))),
         ),
         body: HomePage(),
       )
