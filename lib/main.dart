@@ -39,7 +39,6 @@ class _HomePageState extends State<HomePage> {
    static  List<Widget> Widgets = [
      profile(),
      projects(),
-     about()
    ];
 
   @override
@@ -58,8 +57,6 @@ class _HomePageState extends State<HomePage> {
           label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.work),
           label: 'Projects'),
-          BottomNavigationBarItem(icon: Icon(Icons.info),
-          label: 'About')
         ],
 
       ),
