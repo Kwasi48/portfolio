@@ -38,21 +38,25 @@ class profile extends StatelessWidget {
 
 Widget _imageCard() {
   return const Row(
+    mainAxisSize: MainAxisSize.max,
     children: [
       Image(
         image: AssetImage(
           'assets/mike.png',
         ),
         height: 500,
+        width: 300,
       ),
       SizedBox(
         width: 18,
       ),
       Flexible(
           child: Text(
-        'Hit me up when You need to solve a problem using code!!',
+        'Abu Michael Obeng \n'
+            "Software Engineer",
         style: TextStyle(fontSize: 50),
       ))
+
     ],
   );
 }
