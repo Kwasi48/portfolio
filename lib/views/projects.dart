@@ -26,11 +26,11 @@ class _projectsState extends State<projects> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      appBar: AppBar(
-        leading: Icon(Icons.account_circle_outlined),
-        title: Text('Repositories'),
-        centerTitle: true,
-      ),
+      // appBar: AppBar(
+      //   leading: Icon(Icons.account_circle_outlined),
+      //   title: Text('Repositories'),
+      //   centerTitle: true,
+      // ),
       body: SafeArea(
         child: ListView.builder(
           itemCount:  reposCount,
