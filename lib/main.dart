@@ -4,68 +4,81 @@ import 'views/view.dart';
 void main() {
   runApp( Portfolio());
 }
-class Portfolio extends StatelessWidget {
-  const Portfolio({super.key});
+
+class Portfolio extends StatefulWidget {
+   Portfolio({super.key});
+
+  @override
+  State<Portfolio> createState() => _PortfolioState();
+}
+
+class _PortfolioState extends State<Portfolio> {
+  bool darkMode = true;
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    final theme = (darkMode
+        ? ThemeData.from(colorScheme: ColorScheme.dark())
+        : ThemeData.from(colorScheme: ColorScheme.light()));
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.from(colorScheme: ColorScheme.light()),
-      darkTheme: ThemeData.from(colorScheme: ColorScheme.dark()),
+      theme: theme,
+      //darkTheme: ThemeData.from(colorScheme: ColorScheme.dark()),
       title: 'Portfolio',
-      home: HomePage(),
+      home: Scaffold(
+        appBar: AppBar(
+          leading: IconButton(
+              onPressed: () {
+                setState(() {
+                  darkMode = !darkMode;
+                });
+              },
+              icon: (darkMode ? Icon(Icons.dark_mode) : Icon(Icons.light_mode))),
+        ),
+        body: HomePage(),
+      )
     );
   }
 }
 
 class HomePage extends StatefulWidget {
-   HomePage({super.key});
+  HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  int selectedindex = 0;
+  int selectedIndex = 0;
+  bool darkMode = true;
 
+  void _onitemtapped(int index) {
+    setState(() {
+      selectedIndex = index;
+    });
+  }
 
-  void _onitemtapped(int index){
-      setState((){
-        selectedindex = index;
-      });
-   }
-
-   static  List<Widget> Widgets = [
-     profile(),
-     projects(),
-   ];
+  static List<Widget> widgets = [
+    const profile(),
+    projects(),
+  ];
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-      drawer: Drawer(
 
-      ),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: selectedindex,
+        currentIndex: selectedIndex,
         selectedFontSize: 20,
-        onTap: _onitemtapped ,
+        onTap: _onitemtapped,
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home),
-          label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.work),
-          label: 'Projects'),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.work), label: 'Projects'),
         ],
-
       ),
       body: SafeArea(
-        child: Widgets.elementAt(selectedindex),
+        child: widgets.elementAt(selectedIndex),
       ),
-
     );
   }
 }
-
-
