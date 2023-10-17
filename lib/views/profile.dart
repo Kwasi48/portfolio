@@ -7,7 +7,6 @@ class profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
@@ -28,7 +27,7 @@ class profile extends StatelessWidget {
                  xButton(),
                  linkedInButton()
                ],
-             )
+             ),
           ],
         ),
       ),
@@ -48,7 +47,7 @@ Widget _imageCard() {
         width: 300,
       ),
       SizedBox(
-        width: 18,
+        width: 12,
       ),
       Flexible(
           child: Text(
@@ -56,7 +55,6 @@ Widget _imageCard() {
             "Software Engineer",
         style: TextStyle(fontSize: 50),
       ))
-
     ],
   );
 }
@@ -68,6 +66,7 @@ Widget githubButton() {
     color: Colors.purple,
   );
 }
+
 Widget xButton() {
   return const  SocialMediaButton.twitter(
     url: "https://twitter.com/abubonsrah47",
